@@ -1,3 +1,6 @@
+-- support for i18n
+local S = plantlife_i18n.gettext
+
 --Rocks
 
 local cbox = {
@@ -6,7 +9,7 @@ local cbox = {
 }
 
 minetest.register_node("cavestuff:pebble_1",{
-	description = "Pebble",
+	description = S("Pebble"),
 	drawtype = "mesh",
 	mesh = "cavestuff_pebble.obj",
     tiles = {"undergrowth_pebble.png"},
@@ -39,7 +42,7 @@ minetest.register_node("cavestuff:pebble_2",{
 })
 
 minetest.register_node("cavestuff:desert_pebble_1",{
-	description = "Desert Pebble",
+	description = S("Desert Pebble"),
 	drawtype = "mesh",
 	mesh = "cavestuff_pebble.obj",
     tiles = {"default_desert_stone.png"},
@@ -64,7 +67,7 @@ minetest.register_node("cavestuff:desert_pebble_2",{
     tiles = {"default_desert_stone.png"},
     paramtype = "light",
 	paramtype2 = "facedir",
-    groups = {cracky=3, stone=1, not_in_creative__inventory=1},
+    groups = {cracky=3, stone=1, not_in_creative_inventory=1},
 	selection_box = cbox,
 	collision_box = cbox,
     sounds = default.node_sound_stone_defaults(),
@@ -76,7 +79,7 @@ minetest.register_node("cavestuff:stalactite_1",{
 	drawtype="nodebox",
 	tiles = {"undergrowth_pebble.png"},
 	groups = {cracky=3,attached_node=1},
-	description = "Stalactite",
+	description = S("Stalactite"),
 	paramtype = "light",
 	paramtype2 = "wallmounted",
 	node_box = {
@@ -88,10 +91,10 @@ minetest.register_node("cavestuff:stalactite_1",{
 			{-0.037500,-0.837500,0.037500,0.037500,0.500000,-0.025000},
 		}
 	},
-	
+
 	on_place = function(itemstack, placer, pointed_thing)
 		local pt = pointed_thing
-		if minetest.get_node(pt.under).name=="default:stone" 
+		if minetest.get_node(pt.under).name=="default:stone"
 		and minetest.get_node({x=pt.under.x, y=pt.under.y-1, z=pt.under.z}).name=="air"
 		and minetest.get_node({x=pt.under.x, y=pt.under.y-2, z=pt.under.z}).name=="air" then
 			minetest.set_node({x=pt.under.x, y=pt.under.y-1, z=pt.under.z}, {name="cavestuff:stalactite_"..math.random(1,3)})
@@ -140,6 +143,3 @@ minetest.register_node("cavestuff:stalactite_3",{
 })
 
 --Stalagmites
-
-
-
