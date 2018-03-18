@@ -52,13 +52,11 @@ minetest.override_item("flowers:mushroom_red", {
 -- aliases to the default mushrooms
 
 minetest.register_alias("mushroom:brown", "flowers:mushroom_brown")
-minetest.register_alias("mushroom:brown_natural", "flowers:mushroom_fertile_brown")
 minetest.register_alias("mushroom:spore_brown", "flowers:mushroom_spores_brown")
 minetest.register_alias("mushroom:spore2", "flowers:mushroom_spores_brown")
 minetest.register_alias("mushroom:brown_essence", "flowers:mushroom_brown")
 
 minetest.register_alias("mushroom:red", "flowers:mushroom_red")
-minetest.register_alias("mushroom:red_natural", "flowers:mushroom_fertile_red")
 minetest.register_alias("mushroom:spore_red", "flowers:mushroom_spores_red")
 minetest.register_alias("mushroom:spore1", "flowers:mushroom_spores_red")
 minetest.register_alias("mushroom:poison", "flowers:mushroom_red")
